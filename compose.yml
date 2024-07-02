@@ -1,0 +1,12 @@
+services:
+  homepage-front:
+    build: .
+    ports:
+      - ${FRONT_PORT}:3000
+    networks:
+      - internal
+    restart: unless-stopped
+
+networks:
+  internal:
+    external: true
