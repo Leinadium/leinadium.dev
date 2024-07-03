@@ -1,5 +1,5 @@
 services:
-  homepage-front:
+  homepage:
     build: .
     ports:
       - ${FRONT_PORT}:3000
