@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from "svelte";
     import Field from "./Field.svelte";
     export let name = "Title";
     export let content = [
@@ -23,14 +24,33 @@
             link: "https://www.worldcubeassociation.org/persons/2018GUIM02"
         },
     ];
+
+    $: enabledContent = Array(content.length).fill(false);
+
+    function enable(i) {
+        if (i < content.length) {
+            enabledContent[i] = true;
+            setTimeout(() => enable(i + 1), 150);
+        }
+    }
+
+    onMount(() => {
+        enable(0);
+    });
+
 </script>
 
 
 <div class="section">
     <span class="section-title" style="display: none">{name}</span>
     <div class="section-content">
-        {#each content as {name, image, link}}
-            <Field image={image} link={link} name={name} />
+        {#each content as {name, image, link}, i}
+            <Field
+                image={image}
+                link={link}
+                name={name}
+                enabled={enabledContent[i]}
+            />
         {/each}
     </div>
 </div>
