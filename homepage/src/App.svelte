@@ -1,11 +1,13 @@
 <script>
     import Title from "./lib/Title.svelte";
+    import Descrption from "./lib/Description.svelte";
     import SectionArea from "./lib/SectionArea.svelte";
     // pallete: https://colorhunt.co/palette/0926351b42425c83749ec8b9
 </script>
 
 <main>
     <Title />
+    <Descrption />
     <SectionArea />
 </main>
 
@@ -19,7 +21,7 @@
 
         display: flex;
         flex-flow: column nowrap;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         gap: 5vh;
     }
