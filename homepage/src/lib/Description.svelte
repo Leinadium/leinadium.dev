@@ -16,15 +16,15 @@
 
     .description {
         font-weight: 600;
-        margin-bottom: 0;
+        margin-bottom: 0.5em;
     }
 
     .description-1 {
-        font-size: 1.5em;
-        height: 1.2em;
+        font-size: min(1.5em, 4vw);
+        height: min(1.2em, 3.2vw);
     }
 
     .description-2 {
-        font-size: 1em;
+        font-size: min(1em, 2.3vw);
     }
 </style>

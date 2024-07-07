@@ -11,7 +11,6 @@
             <span class="at">@</span>{user}
         </span>
     </div>
-
 </div>
 
 <style>
@@ -20,7 +19,6 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        gap: 2em;
     }
     img {
         height: 6em;
@@ -36,12 +34,12 @@
     }
     .name {
         height: 1.2em;
-        font-size: 3em;
+        font-size: min(3em, 8vw);
         font-weight: 600;
         margin-bottom: 0;
     }
     .user, .at {
-        font-size: 1.5em;
+        font-size: min(1.5em, 4vw);
         font-weight: 500;
         opacity: 0.7;
     }

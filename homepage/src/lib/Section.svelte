@@ -2,28 +2,7 @@
     import { onMount } from "svelte";
     import Field from "./Field.svelte";
     export let name = "Title";
-    export let content = [
-        {
-            name: "Leinadium",
-            image: "github-1.svg",
-            link: "https://github.com/Leinadium"
-        },
-        {
-            name: "Daniel Guimarães",
-            image: "linkedin-1.svg",
-            link: "https://www.linkedin.com/in/daniel-guimaraes-a0993b213/"
-        },
-        {
-            name: "@leinadguimaraes",
-            image: "insta-1.svg",
-            link: "https://instagram.com/leinadguimaraes"
-        },
-        {
-            name: "2018GUIM02",
-            image: "wca-1.svg",
-            link: "https://www.worldcubeassociation.org/persons/2018GUIM02"
-        },
-    ];
+    export let content = [];
 
     $: enabledContent = Array(content.length).fill(false);
 
@@ -75,7 +54,7 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 10%;
     }
 
