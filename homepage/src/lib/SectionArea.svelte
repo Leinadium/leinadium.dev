@@ -39,41 +39,55 @@
             id: "curriculum-br",
             name: "Curriculum (BR)",
             image: "doc-br.png",
-            link: "/curriculum-pt.pdf"
+            link: "/static/curriculum-pt.pdf"
         },
         {
             id: "curriculum-en",
             name: "Curriculum (EN)",
             image: "doc-en.png",
-            link: "/curriculum-en.pdf"
+            link: "/static/curriculum-en.pdf"
         },
         {
             id: "back",
             name: "Back",
-            image: "doc-1.svg",
+            image: "back-1.svg",
             link: "",
         }
     ]
 
     let currentContent = content1;
+    let nextContent = content1;
+    let enableContent = true;
 
     function switchContent(event) {
         const name = event.detail.message;
         if (name === "curriculum") {
-            currentContent = content2;
+            enableContent = false;
+            nextContent = content2;
         }
         else if (name === "back") {
-            currentContent = content1;
+            enableContent = false;
+            nextContent = content1;
         }
         else {
             console.log("Invalid content name: " + name);
         }
     }
 
+    function applyContent() {
+        currentContent = nextContent;
+        enableContent = true;
+    }
+
 </script>
 
 <div class="section-area">
-    <Section content={currentContent} on:switch={switchContent} />
+    <Section
+        content={currentContent}
+        enable={enableContent}
+        on:switch={switchContent}
+        on:ready={applyContent}
+    />
 </div>
 
 <style>

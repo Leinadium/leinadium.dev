@@ -1,5 +1,5 @@
 <script>
-    import { slide } from "svelte/transition";
+    import { fly, fade } from "svelte/transition";
 
     export let image = "assets/svelte.svg";
     export let link = "";
@@ -13,13 +13,12 @@
             href={link ? link : "/#"}
             target={link ? "_blank" : "_self"}
             on:click
-            in:slide={{ delay: 250, duration: 300, axis: 'y' }}
+            on:outroend
+            transition:fly={{ duration: 300, y: '-50%' }}
         >
             <img src={image} alt={name} />
             <span>{name}</span>
         </a>
-    {:else}
-        <p>...</p>
     {/if}
 </div>
 
@@ -32,6 +31,7 @@
         gap: 0.1em;
 
         width: 25%;
+        height: 3em;
     }
 
     img {

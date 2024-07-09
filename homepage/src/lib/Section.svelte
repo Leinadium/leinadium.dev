@@ -1,30 +1,32 @@
 <script>
-    import { onMount } from "svelte";
     import { createEventDispatcher } from "svelte";
     import Field from "./Field.svelte";
+    
     export let name = "Title";
     export let content = [];
+    export let enable = false;
 
     $: enabledContent = Array(content.length).fill(false);
-
-    function enable(i) {
-        if (i < content.length) {
-            enabledContent[i] = true;
-            setTimeout(() => enable(i + 1), 150);
-        }
-    }
+    $: contentLength = content.length;
 
     let dispatcher = createEventDispatcher();
 
-    function dispatch(name) {
+    function dispatchSwitch(name) {
         dispatcher("switch", { message: name });
     }
 
-    $: content, enable(0);
-    onMount(() => {
-        enable(0);
-    });
+    function dispatchReady() {
+        dispatcher("ready");
+    }
 
+    function enableField(i) {
+        if (i < content.length) {
+            enabledContent[i] = true;
+            setTimeout(() => enableField(i + 1), 150);
+        }
+    }
+
+    $: { if (enable && content) setTimeout(() => {enableField(0)}, 150); };
 </script>
 
 
@@ -36,8 +38,11 @@
                 image={image}
                 link={link}
                 name={name}
-                enabled={enabledContent[i]}
-                on:click={() => dispatch(id)}
+                enabled={enabledContent[i] && enable}
+                on:click={() => dispatchSwitch(id)}
+                on:outroend={() => {
+                    if (i === contentLength - 1) dispatchReady();
+                }}
             />
         {/each}
     </div>
