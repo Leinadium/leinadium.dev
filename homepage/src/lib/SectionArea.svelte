@@ -23,11 +23,25 @@
             link: "https://www.worldcubeassociation.org/persons/2018GUIM02"
         },
     ];
+
+    let content2 = [
+        {
+            name: "Curriculum (BR)",
+            image: "doc-br.png",
+            link: "/curriculum-pt.pdf"
+        },
+        {
+            name: "Curriculum (EN)",
+            image: "doc-en.png",
+            link: "/curriculum-en.pdf"
+        }
+    ]
+
 </script>
 
 <div class="section-area">
     <Section content={content1}/>
-    <!-- <Section /> -->
+    <Section content={content2}/>
     <!-- <Section /> -->
 </div>
 

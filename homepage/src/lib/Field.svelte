@@ -7,23 +7,27 @@
     export let enabled = false;
 </script>
 
-{#if enabled}
-    <a href={link} target="_blank" in:fade>
-        <img src={image} alt={name} />
-        <span>{name}</span>
-    </a>
-{:else}
+<div class="field">
+    {#if enabled}
+        <a href={link} target="_blank" in:fade>
+            <img src={image} alt={name} />
+            <span>{name}</span>
+        </a>
+            
+    {:else}
     <p>...</p>
-{/if}
+    {/if}
+</div>
+
 <style>
-    a {
+    .field, a {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
         gap: 0.1em;
 
-        width: 7em;
+        width: 25%;
     }
 
     img {
