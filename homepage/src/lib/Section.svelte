@@ -66,7 +66,7 @@
         height: 100%;
 
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: center;
         align-items: start;
         gap: 10%;
