@@ -3,8 +3,6 @@ services:
     build: .
     volumes:
       - ./static:/usr/share/nginx/html/static:ro
-    ports:
-      - ${FRONT_PORT}:3000
     networks:
       - internal
     restart: unless-stopped
