@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { createEventDispatcher } from "svelte";
     import Field from "./Field.svelte";
     export let name = "Title";
     export let content = [];
@@ -13,6 +14,13 @@
         }
     }
 
+    let dispatcher = createEventDispatcher();
+
+    function dispatch(name) {
+        dispatcher("switch", { message: name });
+    }
+
+    $: content, enable(0);
     onMount(() => {
         enable(0);
     });
@@ -23,12 +31,13 @@
 <div class="section">
     <span class="section-title" style="display: none">{name}</span>
     <div class="section-content">
-        {#each content as {name, image, link}, i}
+        {#each content as {id, name, image, link}, i}
             <Field
                 image={image}
                 link={link}
                 name={name}
                 enabled={enabledContent[i]}
+                on:click={() => dispatch(id)}
             />
         {/each}
     </div>

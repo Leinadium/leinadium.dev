@@ -1,5 +1,5 @@
 <script>
-    import { fade } from "svelte/transition";
+    import { slide } from "svelte/transition";
 
     export let image = "assets/svelte.svg";
     export let link = "";
@@ -9,13 +9,17 @@
 
 <div class="field">
     {#if enabled}
-        <a href={link} target="_blank" in:fade>
+        <a
+            href={link ? link : "/#"}
+            target={link ? "_blank" : "_self"}
+            on:click
+            in:slide={{ delay: 250, duration: 300, axis: 'y' }}
+        >
             <img src={image} alt={name} />
             <span>{name}</span>
         </a>
-            
     {:else}
-    <p>...</p>
+        <p>...</p>
     {/if}
 </div>
 
