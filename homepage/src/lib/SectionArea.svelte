@@ -93,7 +93,7 @@
 <style>
     .section-area {
         width: 80%;
-        height: 100%;
+        height: 25vh;
 
         display: flex;
         flex-flow: column nowrap;

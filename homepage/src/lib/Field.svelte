@@ -39,10 +39,6 @@
         
         /* border-radius: 50%; */
     }
-    p {
-        width: 7em;
-        visibility: hidden;
-    }
 
     span {
         color: #9EC8B9;
