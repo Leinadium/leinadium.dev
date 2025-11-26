@@ -12,7 +12,7 @@
             id: "linked",
             name: "Daniel Guimarães",
             image: "linkedin-1.svg",
-            link: "https://www.linkedin.com/in/daniel-guimaraes-a0993b213/"
+            link: "https://www.linkedin.com/in/daniel-guimar%C3%A3es-a0993b213/"
         },
         {
             id: "instagram",
