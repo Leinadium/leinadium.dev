@@ -14,12 +14,12 @@
             image: "linkedin-1.svg",
             link: "https://www.linkedin.com/in/daniel-guimar%C3%A3es-a0993b213/"
         },
-        {
-            id: "instagram",
-            name: "@leinadguimaraes",
-            image: "insta-1.svg",
-            link: "https://instagram.com/leinadguimaraes"
-        },
+        // {
+        //     id: "instagram",
+        //     name: "@leinadguimaraes",
+        //     image: "insta-1.svg",
+        //     link: "https://instagram.com/leinadguimaraes"
+        // },
         {
             id: "wca",
             name: "2018GUIM02",
@@ -35,12 +35,12 @@
     ];
 
     const content2 = [
-        {
-            id: "curriculum-br",
-            name: "Curriculum (BR)",
-            image: "doc-br.png",
-            link: "/static/curriculum-pt.pdf"
-        },
+        // {
+        //     id: "curriculum-br",
+        //     name: "Curriculum (BR)",
+        //     image: "doc-br.png",
+        //     link: "/static/curriculum-pt.pdf"
+        // },
         {
             id: "curriculum-en",
             name: "Curriculum (EN)",
