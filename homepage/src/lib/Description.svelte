@@ -1,9 +1,9 @@
 <script></script>
 
 <div class="descriptions">
-    <span class="description description-1">Backend Developer</span>
-    <span class="description description-1">Devops Engineer</span>
-    <span class="description description-2">at OceanPact S. A.</span>
+    <span class="description description-1">Backend Engineer</span>
+    <!-- <span class="description description-1">Devops Engineer</span> -->
+    <span class="description description-2">at Canonical</span>
 </div>
 
 <style>
